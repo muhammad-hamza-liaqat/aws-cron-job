@@ -11,15 +11,24 @@
  * 
  */
 
-export const cronJobHandler = async (event, context) => {
+// export const cronJobHandler = async (event, context) => {
 
-  console.log("inside cronJobHandler");
-  console.log("cron job exceuted at: ", new Date().toISOString());
+//   console.log("inside cronJobHandler");
+//   console.log("cron job exceuted at: ", new Date().toISOString());
 
-  const response = {
+//   const response = {
+//     statusCode: 200,
+//     body: JSON.stringify({ message: "cron job exceuted" })
+//   };
+
+//   return response;
+// };
+
+export const cronJobHandler = async (event, context)=>{
+  const time = new Date();
+  console.log(`cron job exceuted at ${time}`);
+  return {
     statusCode: 200,
-    body: JSON.stringify({ message: "cron job exceuted" })
-  };
-
-  return response;
-};
+    body: JSON.stringify({message: "cron job exceuted!"})
+  }
+}

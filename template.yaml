@@ -28,7 +28,7 @@ Resources:
         CronJobScheduledEvent:
           Type: Schedule
           Properties:
-            Schedule: "cron(* * * * ? *)"
+            Schedule: rate(1 minute)
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
